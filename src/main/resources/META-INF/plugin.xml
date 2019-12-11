@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>org.kinz.tools-plugin</id>
+    <name>Kinz Idea util demo</name>
+    <vendor email="kinz@newordersingle.com" url="http://www.newordersingle.com">NewOrderSingle.com</vendor>
+
+    <description><![CDATA[
+        "My demo idea"
+    ]]></description>
+<!--    <description><![CDATA[-->
+<!--    Kinz idea plugin for commin utils.-->
+<!--    ]]></description>-->
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <applicationService serviceImplementation="com.aptkode.myideademo.MyIdeaDemoPluginSettings"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+<!--        <group id=""MyIdeaDemo.HelloAction" text="MyIdeaDemo">-->
+<!--        </group>-->
+        <group id="MyIdeaDemo.HellAction" text="MyIdeaDemo" description="about my idea">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="com.aptkode.myideademo.HelloAction" id="MyIdeaDemo.Actions.HelloAction" text="Say Hello"/>
+            <action class="com.aptkode.myideademo.PopupAction" id="MyIdeaDemo.Actions.PopupAction" text="Show Popup"/>
+        </group>
+    </actions>
+</idea-plugin>
